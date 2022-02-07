@@ -2,10 +2,8 @@ import express from "express";
 
 const router = express.Router();
 
-// controllers
-import { register, login } from "../controllers/auth";
-
-router.post("/register", register);
-router.post("/login", login);
+router.get("/:message", (req, res) => {
+  res.status(200).send(`Here is your message:  ${req.params.message}`);
+});
 
 module.exports = router;
